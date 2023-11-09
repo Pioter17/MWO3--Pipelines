@@ -5,11 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity
-@Table
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long client_id;
     private String name;
     private String surname;
