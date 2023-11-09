@@ -5,15 +5,12 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity
-@Table
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long client_id;
     private String name;
     private String surname;
     private String email;
+    private int age;
 
     public Client(Long id, String name, String surname, String email) {
         this.client_id = id;
@@ -22,10 +19,10 @@ public class Client {
         this.email = email;
     }
 
-    public Client(String name, String surname, String email){
+    public Client(String name, String surname, int age){
         this.name = name;
         this.surname = surname;
-        this.email = email;
+        this.age = age;
     }
 
     public Client(){
@@ -43,6 +40,10 @@ public class Client {
 
     public String getName() {
         return name;
+    }
+
+    public int getAge(){
+        return age;
     }
 
     public void setName(String name) {
@@ -63,13 +64,5 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
     }
 }
