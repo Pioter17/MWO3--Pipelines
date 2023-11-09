@@ -14,8 +14,6 @@ public class Client {
     private String surname;
     private String email;
 
-    // Getters and setters
-
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Order> orders;
 
