@@ -3,6 +3,7 @@ import mwo.shop.models.Client;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 
@@ -13,6 +14,6 @@ public class ClientServiceTest {
     public void testgetsth() {
         Client client = new Client("imie", "n", 25);
         int age = client.getAge();
-        AssertEquals(25, age);
+        assertEquals(25, age);
     }
 }
