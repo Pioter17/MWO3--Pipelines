@@ -16,6 +16,11 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
+    public Client getClientById(Long clientId) {
+        return clientRepository.findById(clientId)
+                .orElse(null);
+    }
+
     public void deleteClient(Long clientId) {
         clientRepository.deleteById(clientId);
     }

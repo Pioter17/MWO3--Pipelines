@@ -1,6 +1,7 @@
 package mwo.shop.services;
 
 import jakarta.persistence.EntityNotFoundException;
+import mwo.shop.models.Order;
 import mwo.shop.models.Product;
 import mwo.shop.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,6 @@ public class ProductService {
     private ProductRepository productRepository;
 
     public Product addProduct(Product product) {
-        if (product == null){
-            throw new NullPointerException("Product cannot be null");
-        }
         return productRepository.save(product);
     }
 
@@ -37,4 +35,28 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return (List<Product>) productRepository.findAll();
     }
+
+    public Product getProductById(Long productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() -> new EntityNotFoundException("Product with ID " + productId + " not found"));
+    }
+
+    public void addOrderToProduct(Long productId, Order order) {
+        Product product = getProductById(productId);
+        product.getOrders().add(order);
+        productRepository.save(product);
+    }
+
+    public void removeOrderFromProduct(Long productId, Order order) {
+        Product product = getProductById(productId);
+        product.getOrders().remove(order);
+        productRepository.save(product);
+    }
+
+    public void updateStockQuantity(Product product, int quantityChange) {
+        int currentQuantity = product.getStockQuantity();
+        product.setStockQuantity(currentQuantity + quantityChange);
+        productRepository.save(product);
+    }
 }
+
