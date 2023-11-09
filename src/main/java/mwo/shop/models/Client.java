@@ -6,16 +6,14 @@ import lombok.*;
 import java.util.List;
 
 @Entity
+@Table
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long client_id;
     private String name;
     private String surname;
     private String email;
-
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Order> orders;
 
     public Client(Long id, String name, String surname, String email) {
         this.client_id = id;
