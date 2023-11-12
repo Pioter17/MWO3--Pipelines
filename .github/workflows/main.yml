@@ -1,8 +1,9 @@
-name: CI
+name: CI/CD
 
 on:
-  pull_request:
-    branches: ["main"]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,3 +21,25 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+
+  deploy-development:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Development
+        run: |
+          # Tutaj dodaj skrypty/operacje, które są potrzebne do wdrożenia na środowisko development
+          # Przykładowo, możesz użyć Azure CLI lub innego narzędzia do wdrożenia aplikacji na środowisko development
+
+  deploy-production:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Production
+        run: |
+          # Tutaj dodaj skrypty/operacje, które są potrzebne do wdrożenia na środowisko production
+          # Przykładowo, możesz użyć Azure CLI lub innego narzędzia do wdrożenia aplikacji na środowisko production
+
+
