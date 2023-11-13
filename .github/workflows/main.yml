@@ -27,8 +27,9 @@ jobs:
 
     steps:
       - name: Deploy to Azure App Service
-        run: az webapp deployment source config-zip --resource-group mwopipeline_group --name mwopipeline --src target/your-app.jar
-
+        run: |
+          # Tutaj dodaj skrypty/operacje, które są potrzebne do wdrożenia na środowisko production
+          # Przykładowo, możesz użyć Azure CLI lub innego narzędzia do wdrożenia aplikacji na środowisko production
       
 
   deploy-production:
