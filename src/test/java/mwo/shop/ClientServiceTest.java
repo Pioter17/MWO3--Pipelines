@@ -13,7 +13,7 @@ import java.util.Optional;
 @SpringBootTest(classes = ShopApplication.class)
 public class ClientServiceTest {
 
-//    @Value("${application.version}")
+    @Value("${application.version}")
     private String applicationVersion;
 
     @Test
