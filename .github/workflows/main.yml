@@ -26,10 +26,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to Development
+      - name: Deploy to Azure App Service
         run: |
-          # Tutaj dodaj skrypty/operacje, które są potrzebne do wdrożenia na środowisko development
-          # Przykładowo, możesz użyć Azure CLI lub innego narzędzia do wdrożenia aplikacji na środowisko development
+          # Tutaj dodaj skrypty/operacje, które są potrzebne do wdrożenia na środowisko production
+          # Przykładowo, możesz użyć Azure CLI lub innego narzędzia do wdrożenia aplikacji na środowisko production
+      
 
   deploy-production:
     needs: build
