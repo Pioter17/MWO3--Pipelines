@@ -19,6 +19,7 @@ public class ClientServiceTest {
     @Test
     public void testgetsth() {
         // Wyświetl numer wersji pobrany z właściwości
+        System.out.println("Test1");
         System.out.println("Aktualny numer wersji: " + applicationVersion);
 
         // Przykładowy test z klientem
