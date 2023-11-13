@@ -15,11 +15,12 @@ public class ShopApplication {
 	public static void main(String[] args) {
 		logger.info("Starting the application...");
 
+
+
+		SpringApplication.run(ShopApplication.class, args);
 		Properties properties = new Properties();
 		String version = properties.getProperty("application.version");
 		logger.info("Current application version: {}", version);
-
-		SpringApplication.run(ShopApplication.class, args);
 
 		logger.info("Application started successfully.");
 	}
