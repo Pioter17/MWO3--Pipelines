@@ -93,12 +93,14 @@
 						<directory>src/main/resources</directory>
 						<filtering>true</filtering>
 					</resource>
+					<finalName>${project.artifactId}-${buildNumber}</finalName>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.2.0</version> <!-- Użyj najnowszej wersji -->
+				<version>3.2.0</version>
 				<executions>
 					<execution>
 						<id>filter-resources</id>
@@ -120,19 +122,15 @@
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.7</version> <!-- Zaktualizuj do najnowszej wersji -->
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.2.0</version>
 				<executions>
 					<execution>
-						<id>update-versions</id>
-						<phase>validate</phase>
+						<id>parse-git-revision</id>
 						<goals>
-							<goal>set</goal>
+							<goal>parse-git-describe</goal>
 						</goals>
-						<configuration>
-							<newVersion>${revision}${changelist}</newVersion>
-							<generateBackupPoms>false</generateBackupPoms>
-						</configuration>
+						<phase>validate</phase>
 					</execution>
 				</executions>
 			</plugin>
