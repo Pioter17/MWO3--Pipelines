@@ -32,7 +32,7 @@ jobs:
           echo "Current version: $current_version"
           current_version=$(grep 'application.version' src/main/resources/application.properties | cut -d'=' -f2)
           new_version=$((current_version + 1))
-          echo "application.version=${new_version}" >> src/main/resources/application.properties
+          sed -i "s/application.version=$current_version/application.version=$new_version/" src/main/resources/application.properties
           echo "New version: $new_version"
           cat src/main/resources/application.properties
           git config --local user.email "action@github.com"
@@ -51,6 +51,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push'
+
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
