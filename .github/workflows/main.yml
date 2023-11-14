@@ -48,7 +48,7 @@ jobs:
           path: '${{ github.workspace }}/target/*.jar'
 
 
-  deploy:
+  production:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'push'
@@ -70,4 +70,26 @@ jobs:
           app-name: 'mwopipeline'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A26ABEDC7C5E4F25960DA5BB9C248838 }}
+          package: '*.jar'
+
+  development:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: java-app
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'productionmwo'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_65F2292AE65F4EAE9CEEDEB5D615BA35 }}
           package: '*.jar'
