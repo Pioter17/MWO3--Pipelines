@@ -25,6 +25,6 @@ public class ClientServiceTest {
         // Przykładowy test z klientem
         Client client = new Client("imie", "n", 25);
         int age = client.getAge();
-        assertEquals(15, age);
+        assertEquals(25, age);
     }
 }
