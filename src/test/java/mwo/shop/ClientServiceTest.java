@@ -13,14 +13,14 @@ import java.util.Optional;
 @SpringBootTest(classes = ShopApplication.class)
 public class ClientServiceTest {
 
-    @Value("${application.version}")
-    private String applicationVersion;
+//    @Value("${application.version}")
+//    private String applicationVersion;
 
     @Test
     public void testgetsth() {
         // Wyświetl numer wersji pobrany z właściwości
         System.out.println("Test1");
-        System.out.println("Aktualny numer wersji: " + applicationVersion);
+//        System.out.println("Aktualny numer wersji: " + applicationVersion);
 
         // Przykładowy test z klientem
         Client client = new Client("imie", "n", 25);
