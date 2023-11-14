@@ -27818,3 +27818,30 @@ Unconditional classes:
 2023-11-14T16:02:29.580+01:00  INFO 6040 --- [main] mwo.shop.ShopApplication                 : Started ShopApplication in 4.76 seconds (process running for 5.638)
 2023-11-14T16:02:29.583+01:00 DEBUG 6040 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
 2023-11-14T16:02:29.587+01:00 DEBUG 6040 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-11-14T16:03:28.762+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974208760 sessioncount 0
+2023-11-14T16:03:28.763+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 3 expired sessions: 0
+2023-11-14T16:04:29.084+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974269084 sessioncount 0
+2023-11-14T16:04:29.085+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:05:29.142+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974329142 sessioncount 0
+2023-11-14T16:05:29.142+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:06:29.202+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974389202 sessioncount 0
+2023-11-14T16:06:29.202+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:07:29.257+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974449257 sessioncount 0
+2023-11-14T16:07:29.258+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:08:29.358+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974509358 sessioncount 0
+2023-11-14T16:08:29.359+01:00 DEBUG 6040 --- [Catalina-utility-1] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:09:29.404+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974569404 sessioncount 0
+2023-11-14T16:09:29.405+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 0 expired sessions: 0
+2023-11-14T16:10:29.487+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974629487 sessioncount 0
+2023-11-14T16:10:29.488+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 1 expired sessions: 0
+2023-11-14T16:11:29.543+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : Start expire sessions StandardManager at 1699974689543 sessioncount 0
+2023-11-14T16:11:29.544+01:00 DEBUG 6040 --- [Catalina-utility-2] o.apache.catalina.session.ManagerBase    : End expire sessions StandardManager processingTime 1 expired sessions: 0
+2023-11-14T16:11:43.792+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2023-11-14T16:11:43.792+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b86805d, started on Tue Nov 14 16:02:25 CET 2023
+2023-11-14T16:11:43.805+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147482623
+2023-11-14T16:11:43.809+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerGracefulShutdown' completed its stop procedure
+2023-11-14T16:11:43.809+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147481599
+2023-11-14T16:11:43.841+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerStartStop' completed its stop procedure
+2023-11-14T16:11:43.841+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2023-11-14T16:11:43.842+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2023-11-14T16:11:43.843+01:00 DEBUG 6040 --- [SpringApplicationShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

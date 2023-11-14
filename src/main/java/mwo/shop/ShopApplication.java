@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 @SpringBootApplication
@@ -18,17 +20,31 @@ public class ShopApplication {
 	@Value("${application.version}")
 	private String version1;
 	public static void main(String[] args) {
+//		Properties properties = new Properties();
+//		String version = properties.getProperty("buildNumber");
+
+//		System.out.println("Current application version: " + version);
+
 		Properties properties = new Properties();
-		String version = properties.getProperty("buildNumber");
+		try (InputStream input = ShopApplication.class.getClassLoader().getResourceAsStream("META-INF/buildNumber")) {
+			if (input != null) {
+				properties.load(input);
+				String buildNumber = properties.getProperty("buildNumber");
+				System.out.println("Current application version: " + buildNumber);
+			} else {
+				System.out.println("Unable to find META-INF/buildNumber");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-		System.out.println("Current application version: " + version);
-
-		ApplicationContext context = SpringApplication.run(ShopApplication.class, args);
-
-		VersionHolder versionHolder = context.getBean(VersionHolder.class);
-		System.out.println("Version from VersionHolder: " + versionHolder.getVersion());
-
-		System.out.println("Application started successfully.11111111111111111111111111111111111111111");
+		//
+//		ApplicationContext context = SpringApplication.run(ShopApplication.class, args);
+//
+//		VersionHolder versionHolder = context.getBean(VersionHolder.class);
+//		System.out.println("Version from VersionHolder: " + versionHolder.getVersion());
+//
+//		System.out.println("Application started successfully.11111111111111111111111111111111111111111");
 	}
 
 //	@Override
