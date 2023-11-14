@@ -1,23 +1,25 @@
-package mwo.shop.config;
+//package mwo.shop.config;
+//
+//import org.springframework.boot.info.BuildProperties;
+//import org.springframework.stereotype.Component;
+//
+//@Component
+//public class VersionHolder {
+//
+//    private final String version;
+//
+//    public VersionHolder(BuildProperties buildProperties) {
+//        this.version = buildProperties.getVersion();
+//    }
+//
+//    public String getVersion() {
+//        return version;
+//    }
+//
+//    // Dodaj nową metodę, aby uzyskać dostęp do dodatkowej właściwości
+//    public String getCustomVersion() {
+//        return version;
+//    }
+//}
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
-@Configuration
-public class VersionHolder {
-
-    @Value("${buildNumber}")
-    private String version;
-
-    @Bean
-    @Primary
-    public VersionHolder myVersionHolder() {
-        return new VersionHolder();
-    }
-
-    public String getVersion() {
-        return version;
-    }
-}

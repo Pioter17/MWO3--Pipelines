@@ -23,17 +23,18 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.8.0</version> <!-- Użyj najnowszej wersji -->
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -82,21 +83,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-					<resource>
-						<directory>src/main/resources</directory>
-						<filtering>true</filtering>
-					</resource>
-					<finalName>${project.artifactId}-${buildNumber}</finalName>
+					<additionalProperties>
+						<my.custom.version>${buildNumber}</my.custom.version>
+					</additionalProperties>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -123,28 +122,20 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>1.4</version>
+				<version>1.4</version> <!-- Użyj najnowszej dostępnej wersji -->
 				<executions>
 					<execution>
-						<id>generate-build-number</id>
+						<phase>validate</phase>
 						<goals>
 							<goal>create</goal>
 						</goals>
-						<configuration>
-							<!-- Konfiguracja SCM URL -->
-							<scmVersion>
-								<tag>HEAD</tag>
-								<developerConnection>scm:git:https://github.com/Pioter17/Pipelines---MWO3</developerConnection>
-								<doCheck>false</doCheck>
-								<doUpdate>false</doUpdate>
-							</scmVersion>
-							<!-- Inne konfiguracje... -->
-						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<doCheck>true</doCheck>
+					<doUpdate>true</doUpdate>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
