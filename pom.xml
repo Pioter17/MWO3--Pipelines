@@ -90,11 +90,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<additionalProperties>
-						<my.custom.version>${buildNumber}</my.custom.version>
-					</additionalProperties>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
