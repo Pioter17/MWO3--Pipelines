@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean install -Dproject.version=${{ github.sha }}
+        run: mvn clean install
 
   deploy-development:
     needs: build
