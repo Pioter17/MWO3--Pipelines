@@ -123,22 +123,25 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>1.4</version> <!-- Użyj najnowszej wersji -->
+				<version>1.4</version>
 				<executions>
 					<execution>
 						<id>generate-build-number</id>
-						<phase>validate</phase>
 						<goals>
 							<goal>create</goal>
 						</goals>
+						<configuration>
+							<!-- Konfiguracja SCM URL -->
+							<scmVersion>
+								<tag>HEAD</tag>
+								<developerConnection>scm:git:https://github.com/Pioter17/Pipelines---MWO3</developerConnection>
+								<doCheck>false</doCheck>
+								<doUpdate>false</doUpdate>
+							</scmVersion>
+							<!-- Inne konfiguracje... -->
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<format>{0,number}</format>
-					<items>
-						<item>buildNumber</item>
-					</items>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
