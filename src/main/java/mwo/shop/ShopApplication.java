@@ -20,7 +20,6 @@ public class ShopApplication implements InfoContributor {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(ShopApplication.class, args);
-
 		ShopApplication shopApplication = context.getBean(ShopApplication.class);
 		System.out.println("Current application version: " + shopApplication.appVersion);
 	}
