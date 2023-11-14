@@ -83,6 +83,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.6.3</version> <!-- Zaktualizuj do odpowiedniej wersji dla Spring Boot 3.1.5 -->
 				<executions>
 					<execution>
 						<goals>
